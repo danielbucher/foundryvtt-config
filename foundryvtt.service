@@ -1,0 +1,14 @@
+[Unit]
+Description=Foundry VTT server
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ubuntu
+ExecStart=/home/ubuntu/.nvm/versions/node/v12.19.1/bin/node /home/ubuntu/foundryvtt/resources/app/main.js --dataPath=/home/ubuntu/foundrydata
+
+[Install]
+WantedBy=multi-user.target
